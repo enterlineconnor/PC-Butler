@@ -26,3 +26,13 @@ def restart(param,speak_to_text):
         response = 'wah wah'
         print(response)
         speak_to_text(response)
+
+def shutdown(param,speak_to_text):
+    param = param.strip()
+    param = param.lower()
+    try:
+        os.system("shutdown /s /t 0")
+    except:
+        response = 'wah wah'
+        print(response)
+        speak_to_text(response)

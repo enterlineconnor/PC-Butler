@@ -16,11 +16,11 @@ addressed = False
 
 # Command List
 
-commands = [
-    'play',
-    'start',
-    'restart',
-    ]
+# commands = [
+#     'play',
+#     'start',
+#     'restart',
+#     ]
 
 # Initialize the recognizer 
 r = sr.Recognizer() 
@@ -77,28 +77,37 @@ while(1):
             
             else:
                 for word in phrase:
+                    last_element = len(phrase)-1
                     if word == phrase[0]:
-                        if word in commands:
-                            response = 'Sure thing, ','give me one moment'
-                            print(response)
-                            speak_to_text(response)
-                        else:
-                            response = 'wah wahh'
-                            print(response)
-                            speak_to_text(response)
+                        # if word in commands:
+                        response = 'Sure thing, ','give me one moment'
+                        print(response)
+                        speak_to_text(response)
+                        # else:
+                        #     response = 'wah wahh'
+                        #     print(response)
+                        #     speak_to_text(response)
                             # speeds program by not iterating over rest of sentence
                     else:
                         param += word+' '
                         print(param)
+
+                    # Function Calls
                     
-                    if word == phrase[len(phrase)-1] and (phrase[0] == 'play' or phrase[0] == 'start'):
+                    if word == phrase[last_element] and (phrase[0] == 'play' or phrase[0] == 'start'):
                         actions.start(param,speak_to_text)
                     
-                    elif word == phrase[len(phrase)-1] and (phrase[0] == 'restart'):
+                    elif word == phrase[last_element] and (phrase[0] == 'restart'):
                         actions.restart(param,speak_to_text)
+                    
+                    # elif word == phrase[last_element] and (phrase[0] == 'shutdown' or (phrase[0] == 'shut' and phrase[1] == 'down')):
+                    #     actions.shutdown(param,speak_to_text)
+                    
+                    elif word == phrase[last_element] and (phrase[0] == 'shut' and phrase[1] == 'down'):
+                        actions.shutdown(param,speak_to_text)
                         
-
                 addressed = False
+
     except sr.RequestError as e:
         print("Could not request results; {0}".format(e))
           
