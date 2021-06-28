@@ -93,6 +93,9 @@ while(1):
                     
                     if word == phrase[len(phrase)-1] and (phrase[0] == 'play' or phrase[0] == 'start'):
                         actions.start(param,speak_to_text)
+                    
+                    elif word == phrase[len(phrase)-1] and (phrase[0] == 'restart'):
+                        actions.restart(param,speak_to_text)
                         
 
                 addressed = False
