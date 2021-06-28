@@ -1,0 +1,10 @@
+# Rename this file to 'config.py'
+
+butler = dict(
+    # Name of your robot
+    name = 'foo',
+)
+owner = dict(
+    # Your name
+    name = 'bar',
+)
