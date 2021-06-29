@@ -23,8 +23,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 pytest
-        pip install config
+        pip install flake8 pytest actions
         if [ -f PyAudio-0.2.11-cp38-cp38-win_amd64.whl]; then pip install PyAudio-0.2.11-cp38-cp38-win_amd64.whl; fi
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8

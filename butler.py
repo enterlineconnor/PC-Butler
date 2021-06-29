@@ -95,16 +95,16 @@ while(1):
                     # Function Calls
                     
                     if word == phrase[last_element] and (phrase[0] == 'play' or phrase[0] == 'start'):
-                        actions.start(param,speak_to_text)
+                        speak_to_text(actions.start(param))
                     
                     elif word == phrase[last_element] and (phrase[0] == 'restart'):
-                        actions.restart(param,speak_to_text)
+                        speak_to_text(actions.restart(param))
                     
                     # elif word == phrase[last_element] and (phrase[0] == 'shutdown' or (phrase[0] == 'shut' and phrase[1] == 'down')):
                     #     actions.shutdown(param,speak_to_text)
                     
                     elif word == phrase[last_element] and (phrase[0] == 'shut' and phrase[1] == 'down'):
-                        actions.shutdown(param,speak_to_text)
+                        speak_to_text(actions.shutdown(param))
                         
                 addressed = False
 
