@@ -1,4 +1,4 @@
-# Rename this file to 'config.py'
+# Create another file like this called 'config.py'
 
 butler = dict(
     # Name of your robot
