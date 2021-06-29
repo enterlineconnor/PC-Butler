@@ -1,11 +1,8 @@
 import speech_recognition as sr
-import pyttsx3 
 import os
-import winapps
 import windowsapps
-import config
-
-
+import requests
+import json
 
 def start(param):
     param = param.strip()
@@ -39,3 +36,10 @@ def shutdown(param):
         response = 'Something went wrong'
         print(response)
         return response
+
+def kayne_quote():
+    result = requests.get('https://api.kanye.rest/')
+    quote = result.text
+    json_val = json.loads(quote)
+    kayne_quote = json_val['quote']
+    return kayne_quote
