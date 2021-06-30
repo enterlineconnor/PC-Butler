@@ -7,32 +7,35 @@ import config
 
 
 
-def start(param,speak_to_text):
+def start(param):
     param = param.strip()
     param = param.lower()
     try:
         windowsapps.open_app(param)
+        response = 'Starting Application '+ param
+        print(response)
+        return response
     except:
         response = 'Could not find application '+ param
         print(response)
-        speak_to_text(response)
+        return response
 
-def restart(param,speak_to_text):
+def restart(param):
     param = param.strip()
     param = param.lower()
     try:
         os.system("shutdown /r /t 0")
     except:
-        response = 'wah wah'
+        response = 'Something went wrong'
         print(response)
-        speak_to_text(response)
+        return response
 
-def shutdown(param,speak_to_text):
+def shutdown(param):
     param = param.strip()
     param = param.lower()
     try:
         os.system("shutdown /s /t 0")
     except:
-        response = 'wah wah'
+        response = 'Something went wrong'
         print(response)
-        speak_to_text(response)
+        return response
