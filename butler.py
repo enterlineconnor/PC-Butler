@@ -96,6 +96,7 @@ while(1):
 
                 elif addressed and word == phrase_after_name[last_element] and (param == 'what would kayne do'):
                     speak_to_text(actions.kayne_quote())
+
                     
             addressed = False
 
