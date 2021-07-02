@@ -1,11 +1,5 @@
-# Python program to translate
-# speech to text and text to speech
-  
 import speech_recognition as sr
 import pyttsx3 
-import os
-import winapps
-import windowsapps
 import config
 import actions
 
@@ -99,6 +93,10 @@ while(1):
                 elif addressed and word == phrase_after_name[last_element] and (phrase_after_name[0] == 'shut' and phrase_after_name[1] == 'down'):
                     sanatize_param(param)
                     speak_to_text(actions.shutdown(param))
+
+                elif addressed and word == phrase_after_name[last_element] and (param == 'what would kayne do'):
+                    speak_to_text(actions.kayne_quote())
+
                     
             addressed = False
 
